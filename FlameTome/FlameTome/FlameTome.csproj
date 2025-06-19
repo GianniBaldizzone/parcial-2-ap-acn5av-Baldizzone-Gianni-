@@ -19,6 +19,7 @@
   <ItemGroup>
     <Folder Include="Controladores\" />
     <Folder Include="Modelos\" />
+    <Folder Include="Imagenes\" />
   </ItemGroup>
 
   <ItemGroup>
