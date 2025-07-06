@@ -15,6 +15,7 @@ namespace FlameTome.Frontend
         public PanelPrincipal()
         {
             InitializeComponent();
+            this.Bounds = Screen.PrimaryScreen.WorkingArea;
         }
     }
 }

@@ -17,7 +17,8 @@ namespace FlameTome.Controladores
         public Controller_Base_De_Datos()
         {
             // CAMBIAR ESTO según tu instancia y base de datos
-            cadenaConexion = "Server=TU_SERVIDOR_SQL;Database=TU_BASE_DE_DATOS;Trusted_Connection=True;";
+            cadenaConexion = "Server=localhost;Database=flametome;Trusted_Connection=True;";
+
             conexion = new SqlConnection(cadenaConexion);
         }
 
