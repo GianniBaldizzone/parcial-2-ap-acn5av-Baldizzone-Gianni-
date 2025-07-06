@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace FlameTome.Frontend
 {
-    public partial class Login : Form
+    public partial class PanelPrincipal : Form
     {
-        public Login()
+        public PanelPrincipal()
         {
             InitializeComponent();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

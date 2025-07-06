@@ -28,102 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            txt_password = new Guna.UI2.WinForms.Guna2TextBox();
-            txt_user = new Guna.UI2.WinForms.Guna2TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            pictureBox1 = new PictureBox();
+            btn_autenticar = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            panel1 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // guna2HtmlLabel1
+            // pictureBox1
             // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.ForeColor = Color.Blue;
-            guna2HtmlLabel1.Location = new Point(286, 118);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(43, 17);
-            guna2HtmlLabel1.TabIndex = 0;
-            guna2HtmlLabel1.Text = "Usuario";
-            guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, 33);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(647, 570);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
-            // guna2HtmlLabel2
+            // btn_autenticar
             // 
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.ForeColor = Color.Blue;
-            guna2HtmlLabel2.Location = new Point(286, 210);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(63, 17);
-            guna2HtmlLabel2.TabIndex = 1;
-            guna2HtmlLabel2.Text = "Contraseña";
+            btn_autenticar.BackColor = Color.Orange;
+            btn_autenticar.Location = new Point(195, 267);
+            btn_autenticar.Name = "btn_autenticar";
+            btn_autenticar.Size = new Size(144, 45);
+            btn_autenticar.TabIndex = 1;
+            btn_autenticar.Text = "Ingresar";
+            btn_autenticar.UseVisualStyleBackColor = false;
             // 
-            // txt_password
+            // textBox1
             // 
-            txt_password.CustomizableEdges = customizableEdges1;
-            txt_password.DefaultText = "";
-            txt_password.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txt_password.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txt_password.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txt_password.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txt_password.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt_password.Font = new Font("Segoe UI", 9F);
-            txt_password.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt_password.Location = new Point(286, 245);
-            txt_password.Name = "txt_password";
-            txt_password.PlaceholderText = "";
-            txt_password.SelectedText = "";
-            txt_password.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txt_password.Size = new Size(200, 36);
-            txt_password.TabIndex = 2;
-            txt_password.TextChanged += txt_password_TextChanged;
+            textBox1.Location = new Point(139, 182);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(253, 23);
+            textBox1.TabIndex = 2;
             // 
-            // txt_user
+            // textBox2
             // 
-            txt_user.CustomizableEdges = customizableEdges3;
-            txt_user.DefaultText = "";
-            txt_user.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txt_user.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txt_user.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txt_user.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txt_user.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt_user.Font = new Font("Segoe UI", 9F);
-            txt_user.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txt_user.Location = new Point(286, 158);
-            txt_user.Name = "txt_user";
-            txt_user.PlaceholderText = "";
-            txt_user.SelectedText = "";
-            txt_user.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txt_user.Size = new Size(200, 36);
-            txt_user.TabIndex = 3;
+            textBox2.Location = new Point(139, 122);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(253, 23);
+            textBox2.TabIndex = 3;
+            textBox2.TextChanged += textBox2_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(144, 78);
+            label1.Name = "label1";
+            label1.Size = new Size(60, 19);
+            label1.TabIndex = 4;
+            label1.Text = "Usuario";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(144, 160);
+            label2.Name = "label2";
+            label2.Size = new Size(85, 19);
+            label2.TabIndex = 5;
+            label2.Text = "Contraseña";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.IndianRed;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(btn_autenticar);
+            panel1.Location = new Point(784, 142);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(541, 398);
+            panel1.TabIndex = 6;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(6F, 16F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
-            ClientSize = new Size(782, 480);
-            Controls.Add(txt_user);
-            Controls.Add(txt_password);
-            Controls.Add(guna2HtmlLabel2);
-            Controls.Add(guna2HtmlLabel1);
-            Font = new Font("Impact", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            BackColor = SystemColors.ActiveCaptionText;
+            ClientSize = new Size(1470, 636);
+            Controls.Add(panel1);
+            Controls.Add(pictureBox1);
             Name = "Login";
             Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2TextBox txt_password;
-        private Guna.UI2.WinForms.Guna2TextBox txt_user;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-       
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private PictureBox pictureBox1;
+        private Button btn_autenticar;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Label label1;
+        private Label label2;
+        private Panel panel1;
     }
 }
