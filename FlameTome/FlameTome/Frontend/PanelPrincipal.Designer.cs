@@ -159,11 +159,11 @@
             lbl_rol.BackColor = Color.SandyBrown;
             lbl_rol.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbl_rol.ForeColor = SystemColors.ButtonHighlight;
-            lbl_rol.Location = new Point(1360, 23);
+            lbl_rol.Location = new Point(1313, 23);
             lbl_rol.Name = "lbl_rol";
-            lbl_rol.Size = new Size(85, 19);
+            lbl_rol.Size = new Size(132, 19);
             lbl_rol.TabIndex = 9;
-            lbl_rol.Text = "Bienvenido ";
+            lbl_rol.Text = "Rol: Administrador";
             lbl_rol.TextAlign = ContentAlignment.BottomRight;
             // 
             // PanelPrincipal
