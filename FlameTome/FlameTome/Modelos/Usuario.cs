@@ -23,6 +23,19 @@ namespace FlameTome.Modelos
             IdRol = idRol;
             FechaCreacion = DateTime.Now;
             Activo = true;
+            FechaModificacion = null; // no tiene aún modificación
+        }
+
+        // Constructor para cargar un usuario con todos los datos (por ejemplo desde la base de datos)
+        public Usuario(int id, string nombreUsuario, string contraseña, DateTime fechaCreacion, DateTime? fechaModificacion, int idRol, bool activo)
+        {
+            Id = id;
+            NombreUsuario = nombreUsuario;
+            Contraseña = contraseña;
+            FechaCreacion = fechaCreacion;
+            FechaModificacion = fechaModificacion;
+            IdRol = idRol;
+            Activo = activo;
         }
     }
 

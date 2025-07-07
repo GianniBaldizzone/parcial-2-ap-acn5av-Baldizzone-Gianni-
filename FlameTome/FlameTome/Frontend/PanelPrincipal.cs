@@ -49,7 +49,32 @@ namespace FlameTome.Frontend
 
         private void btn_usuarios_Click(object sender, EventArgs e)
         {
+            // Limpiar controles previos en el panel
+            panel_contenedor.Controls.Clear();
 
+            // Crear instancia del UserControl
+            PanelUsuarios usuariosControl = new PanelUsuarios();
+
+            // Configurar para que ocupe todo el panel
+            usuariosControl.Dock = DockStyle.Fill;
+
+            // Agregar al panel contenedor
+            panel_contenedor.Controls.Add(usuariosControl);
+        }
+
+        private void AbrirFormularioEnPanel(object formHijo)
+        {
+            if (this.panel_contenedor.Controls.Count > 0)
+                this.panel_contenedor.Controls.RemoveAt(0);
+
+            Form fh = formHijo as Form;
+            fh.TopLevel = false;
+            fh.FormBorderStyle = FormBorderStyle.None;
+            fh.Dock = DockStyle.Fill;
+
+            this.panel_contenedor.Controls.Add(fh);
+            this.panel_contenedor.Tag = fh;
+            fh.Show();
         }
 
         public void OcultarBotonUsuarios()

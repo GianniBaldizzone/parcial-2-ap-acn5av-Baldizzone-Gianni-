@@ -11,7 +11,51 @@ namespace FlameTome.Controladores
 {
     public class Controller_Usuario : Controller_Base_De_Datos
     {
-        // Registrar un nuevo usuario
+        // obtener lista de usuarios
+
+        public List<Usuario> ObtenerTodosLosUsuarios()
+        {
+            List<Usuario> lista = new List<Usuario>();
+            var db = new Controller_Base_De_Datos();
+
+            try
+            {
+                if (db.AbrirConexion())
+                {
+                    SqlCommand comando = new SqlCommand("SELECT id, nombre_usuario, contraseña, fecha_creacion, fecha_modificacion, id_rol, activo FROM usuarios", db.ObtenerConexion());
+                    SqlDataReader reader = comando.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        // Leemos activo como int (TINYINT en BD)
+                        int activoInt = reader.GetByte(6); // GetByte es mejor para tinyint
+
+                        Usuario u = new Usuario(
+                            id: reader.GetInt32(0),
+                            nombreUsuario: reader.GetString(1),
+                            contraseña: reader.GetString(2),
+                            fechaCreacion: reader.GetDateTime(3),
+                            fechaModificacion: reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime(4),
+                            idRol: reader.GetInt32(5),
+                            activo: activoInt == 1 ? true : false
+                        );
+
+                        lista.Add(u);
+                    }
+
+                    reader.Close();
+                    db.CerrarConexion();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener los usuarios: " + ex.Message);
+            }
+
+            return lista;
+        }
+
+
 
 
         // Login de usuario

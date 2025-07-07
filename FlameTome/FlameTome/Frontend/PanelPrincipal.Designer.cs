@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelPrincipal));
             pictureBox1 = new PictureBox();
-            panel1 = new Panel();
+            panel_contenedor = new Panel();
             btn_bibliotecas = new Button();
             btn_categorias = new Button();
             btn_series = new Button();
@@ -53,14 +53,14 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // panel1
+            // panel_contenedor
             // 
-            panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = Color.DarkOrange;
-            panel1.Location = new Point(220, 59);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1225, 595);
-            panel1.TabIndex = 2;
+            panel_contenedor.Anchor = AnchorStyles.None;
+            panel_contenedor.BackColor = Color.DarkOrange;
+            panel_contenedor.Location = new Point(220, 59);
+            panel_contenedor.Name = "panel_contenedor";
+            panel_contenedor.Size = new Size(1225, 595);
+            panel_contenedor.TabIndex = 2;
             // 
             // btn_bibliotecas
             // 
@@ -187,7 +187,7 @@
             Controls.Add(btn_series);
             Controls.Add(btn_categorias);
             Controls.Add(btn_bibliotecas);
-            Controls.Add(panel1);
+            Controls.Add(panel_contenedor);
             Controls.Add(pictureBox1);
             Name = "PanelPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
@@ -201,7 +201,7 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Panel panel1;
+        private Panel panel_contenedor;
         private Button btn_bibliotecas;
         private Button btn_categorias;
         private Button btn_series;
