@@ -55,6 +55,56 @@ namespace FlameTome.Controladores
             return lista;
         }
 
+        public List<Usuario> ObtenerUsuariosPaginados(int pagina, int cantidadPorPagina)
+        {
+            List<Usuario> lista = new List<Usuario>();
+            var db = new Controller_Base_De_Datos();
+
+            try
+            {
+                if (db.AbrirConexion())
+                {
+                    string query = @"
+                SELECT id, nombre_usuario, contraseña, fecha_creacion, fecha_modificacion, id_rol, activo
+                FROM usuarios
+                ORDER BY id
+                OFFSET @Offset ROWS
+                FETCH NEXT @Cantidad ROWS ONLY";
+
+                    SqlCommand comando = new SqlCommand(query, db.ObtenerConexion());
+                    comando.Parameters.AddWithValue("@Offset", (pagina - 1) * cantidadPorPagina);
+                    comando.Parameters.AddWithValue("@Cantidad", cantidadPorPagina);
+
+                    SqlDataReader reader = comando.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int activoInt = reader.GetByte(6);
+
+                        Usuario u = new Usuario(
+                            id: reader.GetInt32(0),
+                            nombreUsuario: reader.GetString(1),
+                            contraseña: reader.GetString(2),
+                            fechaCreacion: reader.GetDateTime(3),
+                            fechaModificacion: reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime(4),
+                            idRol: reader.GetInt32(5),
+                            activo: activoInt == 1
+                        );
+
+                        lista.Add(u);
+                    }
+
+                    reader.Close();
+                    db.CerrarConexion();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener los usuarios paginados: " + ex.Message);
+            }
+
+            return lista;
+        }
 
 
 

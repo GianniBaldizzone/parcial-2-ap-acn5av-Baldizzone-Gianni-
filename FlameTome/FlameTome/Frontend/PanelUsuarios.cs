@@ -13,10 +13,14 @@ namespace FlameTome.Frontend
 {
     public partial class PanelUsuarios : UserControl
     {
+        private int paginaActual = 1;
+        private int tamanioPagina = 17;
+
         public PanelUsuarios()
         {
             InitializeComponent();
             CargarUsuarios();
+
         }
 
 
@@ -25,13 +29,11 @@ namespace FlameTome.Frontend
             try
             {
                 var controlador = new Controladores.Controller_Usuario();
-                List<Usuario> usuarios = controlador.ObtenerTodosLosUsuarios();
+                List<Usuario> usuarios = controlador.ObtenerUsuariosPaginados(paginaActual, tamanioPagina);
 
-                // Desactivamos generación automática y limpiamos
                 tabla_usuarios.AutoGenerateColumns = false;
                 tabla_usuarios.Rows.Clear();
 
-                // Cargar cada usuario en la tabla
                 foreach (var u in usuarios)
                 {
                     tabla_usuarios.Rows.Add(
@@ -44,10 +46,35 @@ namespace FlameTome.Frontend
                         u.Activo ? "Sí" : "No"
                     );
                 }
+
+                // Actualizar label de página
+                lbl_pagina.Text = $"Página {paginaActual}";
+
+                // Control de botones
+                btnAnterior.Enabled = paginaActual > 1;
+                btnSiguiente.Enabled = usuarios.Count == tamanioPagina;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar los usuarios: " + ex.Message);
+            }
+        }
+        
+
+  
+
+        private void btnSiguiente_Click_1(object sender, EventArgs e)
+        {
+            paginaActual++;
+            CargarUsuarios();
+        }
+
+        private void btnAnterior_Click_1(object sender, EventArgs e)
+        {
+            if (paginaActual > 1)
+            {
+                paginaActual--;
+                CargarUsuarios();
             }
         }
     }
