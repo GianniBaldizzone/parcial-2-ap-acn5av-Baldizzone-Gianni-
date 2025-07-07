@@ -31,12 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelPrincipal));
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            btn_bibliotecas = new Button();
+            btn_categorias = new Button();
+            btn_series = new Button();
+            btn_mangas = new Button();
+            btn_usuarios = new Button();
             btn_cerrarsesion = new Button();
             lbl_usuario = new Label();
             lbl_rol = new Label();
@@ -63,65 +62,73 @@
             panel1.Size = new Size(1225, 595);
             panel1.TabIndex = 2;
             // 
-            // button1
+            // btn_bibliotecas
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Location = new Point(25, 224);
-            button1.Name = "button1";
-            button1.Size = new Size(178, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btn_bibliotecas.Anchor = AnchorStyles.None;
+            btn_bibliotecas.BackColor = Color.DarkOrange;
+            btn_bibliotecas.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_bibliotecas.ForeColor = SystemColors.ButtonHighlight;
+            btn_bibliotecas.Location = new Point(25, 220);
+            btn_bibliotecas.Name = "btn_bibliotecas";
+            btn_bibliotecas.Size = new Size(178, 42);
+            btn_bibliotecas.TabIndex = 0;
+            btn_bibliotecas.Text = "Bibliotecas";
+            btn_bibliotecas.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_categorias
             // 
-            button2.Anchor = AnchorStyles.None;
-            button2.Location = new Point(25, 262);
-            button2.Name = "button2";
-            button2.Size = new Size(178, 23);
-            button2.TabIndex = 3;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btn_categorias.Anchor = AnchorStyles.None;
+            btn_categorias.BackColor = Color.DarkOrange;
+            btn_categorias.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_categorias.ForeColor = SystemColors.ButtonHighlight;
+            btn_categorias.Location = new Point(25, 279);
+            btn_categorias.Name = "btn_categorias";
+            btn_categorias.Size = new Size(178, 36);
+            btn_categorias.TabIndex = 3;
+            btn_categorias.Text = "Categorias";
+            btn_categorias.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btn_series
             // 
-            button3.Anchor = AnchorStyles.None;
-            button3.Location = new Point(25, 301);
-            button3.Name = "button3";
-            button3.Size = new Size(178, 23);
-            button3.TabIndex = 4;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btn_series.Anchor = AnchorStyles.None;
+            btn_series.BackColor = Color.DarkOrange;
+            btn_series.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_series.ForeColor = SystemColors.ButtonHighlight;
+            btn_series.Location = new Point(25, 329);
+            btn_series.Name = "btn_series";
+            btn_series.Size = new Size(178, 37);
+            btn_series.TabIndex = 4;
+            btn_series.Text = "Series";
+            btn_series.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btn_mangas
             // 
-            button4.Anchor = AnchorStyles.None;
-            button4.Location = new Point(25, 340);
-            button4.Name = "button4";
-            button4.Size = new Size(178, 23);
-            button4.TabIndex = 5;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            btn_mangas.Anchor = AnchorStyles.None;
+            btn_mangas.BackColor = Color.DarkOrange;
+            btn_mangas.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_mangas.ForeColor = SystemColors.ButtonHighlight;
+            btn_mangas.Location = new Point(25, 384);
+            btn_mangas.Name = "btn_mangas";
+            btn_mangas.Size = new Size(178, 38);
+            btn_mangas.TabIndex = 5;
+            btn_mangas.Text = "Mangas";
+            btn_mangas.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btn_usuarios
             // 
-            button5.Anchor = AnchorStyles.None;
-            button5.Location = new Point(25, 379);
-            button5.Name = "button5";
-            button5.Size = new Size(178, 23);
-            button5.TabIndex = 6;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Anchor = AnchorStyles.None;
-            button6.Location = new Point(25, 420);
-            button6.Name = "button6";
-            button6.Size = new Size(178, 23);
-            button6.TabIndex = 7;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
+            btn_usuarios.Anchor = AnchorStyles.None;
+            btn_usuarios.BackColor = Color.DodgerBlue;
+            btn_usuarios.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_usuarios.ForeColor = SystemColors.ButtonHighlight;
+            btn_usuarios.Image = (Image)resources.GetObject("btn_usuarios.Image");
+            btn_usuarios.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_usuarios.Location = new Point(25, 541);
+            btn_usuarios.Name = "btn_usuarios";
+            btn_usuarios.Size = new Size(178, 43);
+            btn_usuarios.TabIndex = 6;
+            btn_usuarios.Text = "Usuarios";
+            btn_usuarios.UseVisualStyleBackColor = false;
+            btn_usuarios.Click += btn_usuarios_Click;
             // 
             // btn_cerrarsesion
             // 
@@ -175,12 +182,11 @@
             Controls.Add(lbl_rol);
             Controls.Add(lbl_usuario);
             Controls.Add(btn_cerrarsesion);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btn_usuarios);
+            Controls.Add(btn_mangas);
+            Controls.Add(btn_series);
+            Controls.Add(btn_categorias);
+            Controls.Add(btn_bibliotecas);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Name = "PanelPrincipal";
@@ -196,12 +202,11 @@
 
         private PictureBox pictureBox1;
         private Panel panel1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button btn_bibliotecas;
+        private Button btn_categorias;
+        private Button btn_series;
+        private Button btn_mangas;
+        private Button btn_usuarios;
         private Button btn_cerrarsesion;
         private Label lbl_rol;
         private Label lbl_usuario;

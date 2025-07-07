@@ -22,6 +22,11 @@ namespace FlameTome.Frontend
 
             lbl_usuario.Text = "Bienvenido: " + usuariologueado.NombreUsuario;
 
+            if (usuariologueado.IdRol != 1)
+            {
+                this.OcultarBotonUsuarios();
+            }
+
             // Interpretar el IdRol y mostrar el nombre del rol
             switch (usuariologueado.IdRol)
             {
@@ -40,6 +45,16 @@ namespace FlameTome.Frontend
         private void btn_cerrarsesion_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_usuarios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void OcultarBotonUsuarios()
+        {
+            btn_usuarios.Visible = false;
         }
     }
 }

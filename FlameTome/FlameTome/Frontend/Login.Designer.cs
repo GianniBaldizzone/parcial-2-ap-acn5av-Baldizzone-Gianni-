@@ -35,8 +35,8 @@
             txt_usuario = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            panel1 = new Panel();
             label3 = new Label();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -101,10 +101,23 @@
             label2.TabIndex = 5;
             label2.Text = "Contraseña";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Red;
+            label3.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(139, 239);
+            label3.Name = "label3";
+            label3.Size = new Size(441, 19);
+            label3.TabIndex = 6;
+            label3.Text = "Usuario o contraseña incorrectos. Por favor, intenta nuevamente.";
+            label3.Click += label3_Click;
+            // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = Color.IndianRed;
+            panel1.BackColor = Color.OrangeRed;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
@@ -112,24 +125,10 @@
             panel1.Controls.Add(txt_usuario);
             panel1.Controls.Add(txt_contraseña);
             panel1.Controls.Add(btn_autenticar);
-            panel1.Location = new Point(784, 142);
+            panel1.Location = new Point(780, 124);
             panel1.Name = "panel1";
             panel1.Size = new Size(541, 398);
             panel1.TabIndex = 6;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Red;
-            label3.BorderStyle = BorderStyle.Fixed3D;
-            label3.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(139, 239);
-            label3.Name = "label3";
-            label3.Size = new Size(443, 21);
-            label3.TabIndex = 6;
-            label3.Text = "Usuario o contraseña incorrectos. Por favor, intenta nuevamente.";
-            label3.Click += label3_Click;
             // 
             // Login
             // 
@@ -140,7 +139,7 @@
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Name = "Login";
-            Text = "Login";
+            Text = "FlameTome";
             WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
