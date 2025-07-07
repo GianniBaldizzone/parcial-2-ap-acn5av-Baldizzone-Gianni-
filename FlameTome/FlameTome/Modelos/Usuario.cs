@@ -16,6 +16,11 @@ namespace FlameTome.Modelos
         public int IdRol { get; set; }
         public bool Activo { get; set; }
 
+        public Usuario()
+        {
+        
+        }
+
         public Usuario(string nombreUsuario, string contraseña, int idRol)
         {
             NombreUsuario = nombreUsuario;

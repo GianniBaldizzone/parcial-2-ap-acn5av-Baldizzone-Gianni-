@@ -44,7 +44,7 @@ namespace FlameTome.Frontend
 
         private void btn_cerrarsesion_Click(object sender, EventArgs e)
         {
-
+            Desloguear();
         }
 
         private void btn_usuarios_Click(object sender, EventArgs e)
@@ -80,6 +80,19 @@ namespace FlameTome.Frontend
         public void OcultarBotonUsuarios()
         {
             btn_usuarios.Visible = false;
+        }
+
+        public void Desloguear()
+        {
+            // Limpiar usuario logueado
+            Program.UsuarioLogueado = null;
+
+            // Cerrar el formulario principal
+            this.Close();
+
+            // Mostrar formulario de login
+            Login loginForm = new Login();
+            loginForm.Show();
         }
     }
 }

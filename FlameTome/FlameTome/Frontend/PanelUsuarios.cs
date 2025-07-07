@@ -59,9 +59,9 @@ namespace FlameTome.Frontend
                 MessageBox.Show("Error al cargar los usuarios: " + ex.Message);
             }
         }
-        
 
-  
+
+
 
         private void btnSiguiente_Click_1(object sender, EventArgs e)
         {
@@ -76,6 +76,12 @@ namespace FlameTome.Frontend
                 paginaActual--;
                 CargarUsuarios();
             }
+        }
+
+        private void btn_crear_Click(object sender, EventArgs e)
+        {
+            CrearUsuario crear = new CrearUsuario();
+            crear.Show();
         }
     }
 }

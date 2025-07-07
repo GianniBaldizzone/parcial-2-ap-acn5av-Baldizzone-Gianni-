@@ -106,7 +106,98 @@ namespace FlameTome.Controladores
             return lista;
         }
 
+        public bool CrearUsuario(Usuario usuario)
+        {
+            string query = @"INSERT INTO usuarios 
+                     (nombre_usuario, contraseña, id_rol, fecha_creacion, activo)
+                     VALUES 
+                     (@nombre_usuario, @contraseña, @id_rol, @fecha_creacion, @activo)";
 
+            try
+            {
+                if (AbrirConexion())
+                {
+                    using (SqlCommand comando = new SqlCommand(query, ObtenerConexion()))
+                    {
+                        comando.Parameters.AddWithValue("@nombre_usuario", usuario.NombreUsuario);
+                        comando.Parameters.AddWithValue("@contraseña", usuario.Contraseña);
+                        comando.Parameters.AddWithValue("@id_rol", usuario.IdRol);
+                        comando.Parameters.AddWithValue("@fecha_creacion", usuario.FechaCreacion);
+                        comando.Parameters.AddWithValue("@activo", usuario.Activo ? 1 : 0); // tinyint
+
+                        int filasAfectadas = comando.ExecuteNonQuery();
+
+                        return filasAfectadas > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al crear el usuario: " + ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+
+            return false;
+        }
+
+        public bool UsuarioExiste(string nombreUsuario)
+        {
+            string query = "SELECT COUNT(*) FROM usuarios WHERE nombre_usuario = @nombre";
+
+            try
+            {
+                if (AbrirConexion())
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, ObtenerConexion()))
+                    {
+                        cmd.Parameters.AddWithValue("@nombre", nombreUsuario);
+                        int count = (int)cmd.ExecuteScalar();
+                        return count > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al verificar el usuario: " + ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+
+            return false;
+        }
+
+        public bool ContraseñaYaUsada(string contraseñaPlano)
+        {
+            string query = "SELECT COUNT(*) FROM usuarios WHERE contraseña = @contraseña";
+
+            try
+            {
+                if (AbrirConexion())
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, ObtenerConexion()))
+                    {
+                        cmd.Parameters.AddWithValue("@contraseña", contraseñaPlano);
+                        int cantidad = (int)cmd.ExecuteScalar();
+                        return cantidad > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al verificar contraseña: " + ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+
+            return false;
+        }
 
         // Login de usuario
         public Usuario HacerLogin(string nombreUsuario, string contraseña)

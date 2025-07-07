@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tabla_usuarios = new Guna.UI2.WinForms.Guna2DataGridView();
             id = new DataGridViewTextBoxColumn();
             nombre_usuario = new DataGridViewTextBoxColumn();
@@ -50,29 +50,29 @@
             // 
             tabla_usuarios.AllowUserToAddRows = false;
             tabla_usuarios.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(189, 223, 251);
-            tabla_usuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(189, 223, 251);
+            tabla_usuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             tabla_usuarios.Anchor = AnchorStyles.None;
             tabla_usuarios.BackgroundColor = Color.LightCyan;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(33, 150, 242);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            tabla_usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(33, 150, 242);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            tabla_usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             tabla_usuarios.ColumnHeadersHeight = 17;
             tabla_usuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             tabla_usuarios.Columns.AddRange(new DataGridViewColumn[] { id, nombre_usuario, contraseña, fecha_creacion, fecha_modificacion, id_rol, activo });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(211, 233, 252);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(107, 185, 246);
-            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            tabla_usuarios.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(211, 233, 252);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(107, 185, 246);
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            tabla_usuarios.DefaultCellStyle = dataGridViewCellStyle3;
             tabla_usuarios.GridColor = Color.White;
             tabla_usuarios.Location = new Point(79, 68);
             tabla_usuarios.Name = "tabla_usuarios";
@@ -160,6 +160,7 @@
             btn_crear.TabIndex = 2;
             btn_crear.Text = "Crear usuario";
             btn_crear.UseVisualStyleBackColor = false;
+            btn_crear.Click += btn_crear_Click;
             // 
             // btnSiguiente
             // 
