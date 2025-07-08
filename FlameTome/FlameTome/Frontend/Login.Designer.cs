@@ -66,8 +66,11 @@
             // 
             // txt_contraseña
             // 
+            txt_contraseña.ImeMode = ImeMode.NoControl;
             txt_contraseña.Location = new Point(139, 194);
             txt_contraseña.Name = "txt_contraseña";
+            txt_contraseña.PasswordChar = '*';
+            txt_contraseña.PlaceholderText = "Ingresar contraseña...";
             txt_contraseña.Size = new Size(253, 23);
             txt_contraseña.TabIndex = 2;
             // 
@@ -75,6 +78,7 @@
             // 
             txt_usuario.Location = new Point(139, 122);
             txt_usuario.Name = "txt_usuario";
+            txt_usuario.PlaceholderText = "Ingresar usuario...";
             txt_usuario.Size = new Size(253, 23);
             txt_usuario.TabIndex = 3;
             txt_usuario.TextChanged += textBox2_TextChanged;

@@ -94,5 +94,20 @@ namespace FlameTome.Frontend
             Login loginForm = new Login();
             loginForm.Show();
         }
+
+        private void btn_series_Click(object sender, EventArgs e)
+        {
+            // Limpiar controles previos en el panel
+            panel_contenedor.Controls.Clear();
+
+            // Crear instancia del UserControl
+            PanelSeries SeriesControl = new PanelSeries();
+
+            // Configurar para que ocupe todo el panel
+            SeriesControl.Dock = DockStyle.Fill;
+
+            // Agregar al panel contenedor
+            panel_contenedor.Controls.Add(SeriesControl);
+        }
     }
 }

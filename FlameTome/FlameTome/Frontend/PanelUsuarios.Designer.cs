@@ -32,6 +32,10 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tabla_usuarios = new Guna.UI2.WinForms.Guna2DataGridView();
+            btn_crear = new Button();
+            btnSiguiente = new Button();
+            btnAnterior = new Button();
+            lbl_pagina = new Label();
             id = new DataGridViewTextBoxColumn();
             nombre_usuario = new DataGridViewTextBoxColumn();
             contraseña = new DataGridViewTextBoxColumn();
@@ -39,10 +43,6 @@
             fecha_modificacion = new DataGridViewTextBoxColumn();
             id_rol = new DataGridViewTextBoxColumn();
             activo = new DataGridViewTextBoxColumn();
-            btn_crear = new Button();
-            btnSiguiente = new Button();
-            btnAnterior = new Button();
-            lbl_pagina = new Label();
             ((System.ComponentModel.ISupportInitialize)tabla_usuarios).BeginInit();
             SuspendLayout();
             // 
@@ -74,11 +74,11 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             tabla_usuarios.DefaultCellStyle = dataGridViewCellStyle3;
             tabla_usuarios.GridColor = Color.White;
-            tabla_usuarios.Location = new Point(79, 68);
+            tabla_usuarios.Location = new Point(17, 68);
             tabla_usuarios.Name = "tabla_usuarios";
             tabla_usuarios.ReadOnly = true;
             tabla_usuarios.RowHeadersVisible = false;
-            tabla_usuarios.Size = new Size(784, 449);
+            tabla_usuarios.Size = new Size(933, 449);
             tabla_usuarios.TabIndex = 1;
             tabla_usuarios.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Blue;
             tabla_usuarios.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(189, 223, 251);
@@ -102,6 +102,57 @@
             tabla_usuarios.ThemeStyle.RowsStyle.Height = 25;
             tabla_usuarios.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(107, 185, 246);
             tabla_usuarios.ThemeStyle.RowsStyle.SelectionForeColor = Color.Black;
+            // 
+            // btn_crear
+            // 
+            btn_crear.Anchor = AnchorStyles.None;
+            btn_crear.BackColor = Color.DeepSkyBlue;
+            btn_crear.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_crear.ForeColor = SystemColors.ButtonHighlight;
+            btn_crear.Location = new Point(772, 20);
+            btn_crear.Name = "btn_crear";
+            btn_crear.Size = new Size(178, 42);
+            btn_crear.TabIndex = 2;
+            btn_crear.Text = "Crear usuario";
+            btn_crear.UseVisualStyleBackColor = false;
+            btn_crear.Click += btn_crear_Click;
+            // 
+            // btnSiguiente
+            // 
+            btnSiguiente.BackColor = Color.DeepSkyBlue;
+            btnSiguiente.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSiguiente.ForeColor = SystemColors.ButtonHighlight;
+            btnSiguiente.Location = new Point(842, 533);
+            btnSiguiente.Name = "btnSiguiente";
+            btnSiguiente.Size = new Size(108, 32);
+            btnSiguiente.TabIndex = 3;
+            btnSiguiente.Text = "Siguiente";
+            btnSiguiente.UseVisualStyleBackColor = false;
+            btnSiguiente.Click += btnSiguiente_Click_1;
+            // 
+            // btnAnterior
+            // 
+            btnAnterior.BackColor = Color.DeepSkyBlue;
+            btnAnterior.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAnterior.ForeColor = SystemColors.ButtonFace;
+            btnAnterior.Location = new Point(622, 533);
+            btnAnterior.Name = "btnAnterior";
+            btnAnterior.Size = new Size(116, 32);
+            btnAnterior.TabIndex = 4;
+            btnAnterior.Text = "Anterior";
+            btnAnterior.UseVisualStyleBackColor = false;
+            btnAnterior.Click += btnAnterior_Click_1;
+            // 
+            // lbl_pagina
+            // 
+            lbl_pagina.AutoSize = true;
+            lbl_pagina.Font = new Font("Swis721 BlkCn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_pagina.ForeColor = SystemColors.ButtonHighlight;
+            lbl_pagina.Location = new Point(753, 543);
+            lbl_pagina.Name = "lbl_pagina";
+            lbl_pagina.Size = new Size(31, 15);
+            lbl_pagina.TabIndex = 5;
+            lbl_pagina.Text = "label";
             // 
             // id
             // 
@@ -148,57 +199,6 @@
             activo.Name = "activo";
             activo.ReadOnly = true;
             // 
-            // btn_crear
-            // 
-            btn_crear.Anchor = AnchorStyles.None;
-            btn_crear.BackColor = Color.DeepSkyBlue;
-            btn_crear.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_crear.ForeColor = SystemColors.ButtonHighlight;
-            btn_crear.Location = new Point(685, 3);
-            btn_crear.Name = "btn_crear";
-            btn_crear.Size = new Size(178, 42);
-            btn_crear.TabIndex = 2;
-            btn_crear.Text = "Crear usuario";
-            btn_crear.UseVisualStyleBackColor = false;
-            btn_crear.Click += btn_crear_Click;
-            // 
-            // btnSiguiente
-            // 
-            btnSiguiente.BackColor = Color.DeepSkyBlue;
-            btnSiguiente.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSiguiente.ForeColor = SystemColors.ButtonHighlight;
-            btnSiguiente.Location = new Point(755, 533);
-            btnSiguiente.Name = "btnSiguiente";
-            btnSiguiente.Size = new Size(108, 32);
-            btnSiguiente.TabIndex = 3;
-            btnSiguiente.Text = "Siguiente";
-            btnSiguiente.UseVisualStyleBackColor = false;
-            btnSiguiente.Click += btnSiguiente_Click_1;
-            // 
-            // btnAnterior
-            // 
-            btnAnterior.BackColor = Color.DeepSkyBlue;
-            btnAnterior.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAnterior.ForeColor = SystemColors.ButtonFace;
-            btnAnterior.Location = new Point(545, 533);
-            btnAnterior.Name = "btnAnterior";
-            btnAnterior.Size = new Size(116, 32);
-            btnAnterior.TabIndex = 4;
-            btnAnterior.Text = "Anterior";
-            btnAnterior.UseVisualStyleBackColor = false;
-            btnAnterior.Click += btnAnterior_Click_1;
-            // 
-            // lbl_pagina
-            // 
-            lbl_pagina.AutoSize = true;
-            lbl_pagina.Font = new Font("Swis721 BlkCn BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbl_pagina.ForeColor = SystemColors.ButtonHighlight;
-            lbl_pagina.Location = new Point(676, 543);
-            lbl_pagina.Name = "lbl_pagina";
-            lbl_pagina.Size = new Size(31, 15);
-            lbl_pagina.TabIndex = 5;
-            lbl_pagina.Text = "label";
-            // 
             // PanelUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -219,15 +219,15 @@
 
         private Guna.UI2.WinForms.Guna2DataGridView tabla_usuarios;
         private Button btn_crear;
+        private Button btnSiguiente;
+        private Button btnAnterior;
+        private Label lbl_pagina;
+        private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn nombre_usuario;
         private DataGridViewTextBoxColumn contraseña;
         private DataGridViewTextBoxColumn fecha_creacion;
         private DataGridViewTextBoxColumn fecha_modificacion;
         private DataGridViewTextBoxColumn id_rol;
         private DataGridViewTextBoxColumn activo;
-        private DataGridViewTextBoxColumn id;
-        private Button btnSiguiente;
-        private Button btnAnterior;
-        private Label lbl_pagina;
     }
 }

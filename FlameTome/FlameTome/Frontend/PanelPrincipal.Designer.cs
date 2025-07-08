@@ -100,6 +100,7 @@
             btn_series.TabIndex = 4;
             btn_series.Text = "Series";
             btn_series.UseVisualStyleBackColor = false;
+            btn_series.Click += btn_series_Click;
             // 
             // btn_mangas
             // 
